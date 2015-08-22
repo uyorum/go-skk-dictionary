@@ -43,7 +43,7 @@ func NewSkkDictionary(path string) *SkkDictionary {
 	return d
 }
 
-func isOkuriAri(str string) bool {
+func IsOkuriAri(str string) bool {
 	const A = 97
 	const Z = 122
 	str_b := []byte(str)
@@ -65,7 +65,7 @@ func (d SkkDictionary) Search(kana string) string {
 	var GO_LEFT int
 	var GO_RIGHT int
 
-	if isOkuriAri(kana) {
+	if IsOkuriAri(kana) {
 		table = d.okuri_ari_table
 		GO_LEFT = -1
 		GO_RIGHT = 1
